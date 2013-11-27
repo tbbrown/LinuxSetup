@@ -1,0 +1,9 @@
+#!/bin/bash
+
+cd ~
+cp .bashrc .bashrc.mine .gnomerc /mnt/hgfs/SharedWithWindows/BackedUpFromUbuntu
+rsync -vart --delete ~/projects /mnt/hgfs/SharedWithWindows/BackedUpFromUbuntu
+rsync -vart --delete ~/bin /mnt/hgfs/SharedWithWindows/BackedUpFromUbuntu
+#rsync -vart --delete ~/thirdparty /mnt/hgfs/SharedWithWindows/BackedUpFromUbuntu
+
+

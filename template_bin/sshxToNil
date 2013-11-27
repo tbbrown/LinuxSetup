@@ -1,0 +1,47 @@
+#!/bin/bash
+#
+# File: sshxToNil
+# Purpose: Create an SSH connection to a NIL system with X11 forwarding.
+#          This allows X windows applications started from the secure shell window
+#          to put their display on the X server running on the local system (thus
+#          on the local display.
+# Author: Timothy B. Brown
+# Date: 30 Sep 2010
+
+# establish defaults
+defaultNilSystem=cninds03
+
+# use the following default for general use
+# defaultLoginId=`whoami`
+#
+# since I know my user id is different on the NIL systems than it is 
+# on my Ubuntu Linux system, just provide a default that matches my
+# NIL user id
+defaultLoginId=tbbrown
+
+# get name of NIL system to which to connect
+echo -ne "Enter name of NIL system to which to connect: ["$defaultNilSystem"]: "
+read ans
+if [ -n "$ans" ]
+then
+  host=$ans
+else
+  host=$defaultNilSystem
+fi
+
+# get username for system to which to connect
+echo -ne "Enter your username for connecting to" $host "["$defaultLoginId"]: "
+read ans
+if [ -n "$ans" ]
+then
+  user=$ans
+else
+  user=$defaultLoginId
+fi
+
+# make the ssh -X connection
+echo "Issuing the following command"
+echo "ssh -X "$user"@"$host".neuroimage.wustl.edu"
+
+ssh -X "$user"@"$host".neuroimage.wustl.edu
+

@@ -1,0 +1,16 @@
+#!/bin/bash
+#
+# File: sshxToCCPMAC
+# Purpose: Create an SSH connection to CCPMAC1 a NIL system with X11 forwarding.
+#          This allows X windows applications started from the secure shell window
+#          to put their display on the X server running on the local system (thus
+#          on the local display.
+# Author: Timothy B. Brown
+# Date: 06 Oct 2010
+
+# make the ssh -X connection
+echo "Issuing the following command"
+echo "ssh -X tbb@ccpmac1.wustl.edu"
+
+ssh -X tbb@ccpmac1.wustl.edu
+

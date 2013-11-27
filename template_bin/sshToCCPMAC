@@ -1,0 +1,13 @@
+#!/bin/bash
+#
+# File: sshToCCPMAC
+# Purpose: Create an SSH connection to the CCPMAC1.
+# Author: Timothy B. Brown
+# Date: 06 Oct 2010
+
+# make the ssh connection
+echo "Issuing the following command"
+echo "ssh tbb@ccpmac1.wustl.edu"
+
+ssh tbb@ccpmac1.wustl.edu
+

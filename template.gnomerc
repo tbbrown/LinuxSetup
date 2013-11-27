@@ -1,0 +1,22 @@
+# export environment variables
+
+export JAVA_HOME=/usr/lib/jvm/default-java
+export EDITOR=gedit
+
+#export BBAS_PROJECTS=/home/tbb/projects/bbassoftware
+#export WUSTL_PROJECTS=/home/tbb/projects/wustlsoftware
+#export JARLIB=/home/tbb/jarlib
+#export CLI_JAR=/home/tbb/thirdparty/Apache/Jakarta/commons-cli-1.0/commons-cli-1.0.jar
+#export JUNIT3_HOME=/home/tbb/thirdparty/JUnit/junit3.8.2
+#export JUNIT3_JAR=$JUNIT3_HOME/junit.jar
+#export RIVERLAYOUT_JAR=/home/tbb/thirdparty/RiverLayout/RiverLayout.jar
+#export JAVAMAIL_JAR=/home/tbb/thirdparty/JavaMail/javamail-1.4.3/mail.jar
+#export MULTISPLIT_JAR=/home/tbb/thirdparty/MultiSplit/dist/MultiSplit.jar
+#export EDITOR=/usr/bin/gedit
+#
+## PATH
+#if [ -d ~/dmd2/linux/bin ]; then
+#    PATH=$PATH:~/dmd2/linux/bin
+#    export PATH
+#fi
+

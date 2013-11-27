@@ -1,0 +1,12 @@
+# command aliases
+alias ls="ls -F"
+alias purge="rm -i *~ .*~"
+
+# add my local bin to the PATH
+if [ -d ~/bin ]; then
+    PATH=$PATH:~/bin
+    export PATH
+fi
+
+
+

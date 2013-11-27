@@ -1,0 +1,40 @@
+#!/bin/bash
+#
+# File: findInFiles
+# Author: Timothy B. Brown
+# Date: 22 Feb 2011
+
+# doesn't work yet
+
+
+echo -ne "Enter identification of files to search (you must enclose in quotes): [\"*\"]: "
+read ans
+if [ -n "$ans" ]
+then
+  filespec="$ans"
+else
+  filespec=\"*\"
+fi
+
+echo $filespec
+
+echo -ne "Enter search string (you must enclose in quotes): [\"hello\"]: "
+read ans
+if [ -n "$ans" ]
+then
+  searchstring="$ans"
+else
+  searchstring=\"hello\"
+fi
+
+echo $filespec
+echo $searchstring
+
+echo "hello"
+
+echo "find . -name $filespec -print"
+find . -name \"$filespec\" -print
+exit
+
+find . -name "$filespec" -print -exec grep "$searchstring" {} \;
+

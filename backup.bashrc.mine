@@ -1,0 +1,28 @@
+# ~/.my.bashrc
+alias ls='ls -F'
+alias purge='rm -i *~'
+
+# Add my local bin to PATH
+if [ -d ~/bin ]; then
+    PATH=$PATH:~/bin
+    export PATH
+fi
+
+# Add mpc to PATH
+if [ -d ~/tools/mpc/MPC_3_9_0/MPC ]; then
+    PATH=$PATH:~/tools/mpc/MPC_3_9_0/MPC
+    export PATH
+fi
+
+PS1='${debian_chroot:+($debian_chroot)}\u@\h \$ '
+
+# If this is an xterm set the title to user@host:dir
+case "$TERM" in
+xterm*|rxvt*)
+#    PS1="\[\e]0;${debian_chroot:+($debian_chroot)}\u@\h: \w\a\]$PS1"
+    PS1="\[\e]0;${debian_chroot:+($debian_chroot)} \w\a\]$PS1"
+    ;;
+*)
+    ;;
+esac
+

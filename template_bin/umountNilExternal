@@ -1,0 +1,26 @@
+#!/bin/bash
+#
+# File: umountNilExternal
+# Purpose: unmount a named subdirectory from nil-external.neuroimage.wustl.edu 
+# Author: Timothy B. Brown
+# Date: 29 Oct 2010
+
+# get name of nil-external subdirectory to unmount
+echo -ne "Enter nil-external subdirectory to unmount [ccp]: "
+read ans
+if [ -n "$ans" ]
+then
+  subdir_to_unmount="$ans"
+else
+  subdir_to_unmount=ccp
+fi
+
+mount_point=/mnt/nfs/nil-external/"$subdir_to_unmount"
+
+# report
+echo "Issuing the following command"
+echo "sudo umount "$mount_point""
+
+# umount the directory
+sudo umount "$mount_point"
+

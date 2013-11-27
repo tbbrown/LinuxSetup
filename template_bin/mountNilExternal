@@ -1,0 +1,33 @@
+#!/bin/bash
+#
+# File: mountNilExternal
+# Purpose: NFS mount a named subdirectory from nil-external.neuroimage.wustl.edu 
+#          into a subdirectory of /mnt/nfs/nil-external 
+# Author: Timothy B. Brown
+# Date: 29 Oct 2010
+
+# get name of nil-external subdirectory to mount
+echo -ne "Enter nil-external subdirectory to mount [ccp]: "
+read ans
+if [ -n "$ans" ]
+then
+  subdir_to_mount="$ans"
+else
+  subdir_to_mount=ccp
+fi
+
+mount_point=/mnt/nfs/nil-external/"$subdir_to_mount"
+
+# make sure mount point exists
+if [ ! -d "$mount_point" ]
+then
+  sudo mkdir -p "$mount_point"
+fi
+
+# report
+echo "Issuing the following command"
+echo "sudo mount nil-external.neuroimage.wustl.edu:/"$subdir_to_mount" "$mount_point""
+echo "The mounted directory should be found at: "$mount_point""
+# mount the directory
+sudo mount nil-external.neuroimage.wustl.edu:/"$subdir_to_mount" "$mount_point"
+
