@@ -3,6 +3,8 @@
 export JAVA_HOME=/usr/lib/jvm/default-java
 export EDITOR=gedit
 
+# beyond version 2.0
+
 export BBAS_PROJECTS=/home/tbb/projects/bbassoftware
 #export WUSTL_PROJECTS=/home/tbb/projects/wustlsoftware
 export JARLIB=/home/tbb/jarlib
