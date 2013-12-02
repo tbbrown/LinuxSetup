@@ -1,13 +1,15 @@
+middle	
+
 # export environment variables
 
 export JAVA_HOME=/usr/lib/jvm/default-java
-export EDITOR=emacs
+export EDITOR=gedit
 
 # beyond version 2.0
 
 export BBAS_PROJECTS=/home/tbb/projects/bbassoftware
 #export WUSTL_PROJECTS=/home/tbb/projects/wustlsoftware
-export JARLIB=/home/tbb/shared/jarlib
+export JARLIB=/home/tbb/jarlib
 #export CLI_JAR=/home/tbb/thirdparty/Apache/Jakarta/commons-cli-1.0/commons-cli-1.0.jar
 #export JUNIT3_HOME=/home/tbb/thirdparty/JUnit/junit3.8.2
 #export JUNIT3_JAR=$JUNIT3_HOME/junit.jar
