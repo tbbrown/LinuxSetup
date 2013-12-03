@@ -1,0 +1,3 @@
+#!/bin/sh
+product_version=`cat .product_version`
+echo "LinuxSetup" "$product_version"
