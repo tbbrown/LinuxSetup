@@ -1,0 +1,47 @@
+#!/bin/bash
+#
+# File: sshxToNrg
+# Purpose: Create an SSH connection to an NRG system with X11 forwarding.
+#          This allows X windows applications started from the secure shell window
+#          to put their display on the X server running on the local system (thus
+#          on the local display.
+# Author: Timothy B. Brown
+# Date: 04 Dec 2013
+
+# establish defaults
+defaultNrgSystem=hcpx-dev-cuda00
+
+# use the following default for general use
+# defaultLoginId=`whoami`
+#
+# since I know my user id is different on the NRG systems than it is 
+# on my local Linux system, just provide a default that matches my
+# NRG user id
+defaultLoginId=tbrown01
+
+# get name of NRG system to which to connect
+echo -ne "Enter name of NRG system to which to connect: ["$defaultNrgSystem"]: "
+read ans
+if [ -n "$ans" ]
+then
+  host=$ans
+else
+  host=$defaultNrgSystem
+fi
+
+# get username for system to which to connect
+echo -ne "Enter your username for connecting to" $host "["$defaultLoginId"]: "
+read ans
+if [ -n "$ans" ]
+then
+  user=$ans
+else
+  user=$defaultLoginId
+fi
+
+# make the ssh -X connection
+echo "Issuing the following command"
+echo "ssh -X "$user"@"$host".nrg.mir"
+
+ssh -X "$user"@"$host".nrg.mir
+
