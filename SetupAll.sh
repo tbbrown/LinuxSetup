@@ -11,6 +11,9 @@ export SetupJavaVersion=openjdk-7-jdk
 # Setup account configuration files
 . SetupDotFiles.sh
 
+# Setup personal bin directory
+. SetupBin.sh
+
 # Setup Eclipse
 . SetupEclipse.sh
 
