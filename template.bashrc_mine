@@ -2,11 +2,15 @@
 alias ls="ls -F"
 alias purge="rm -i *~ .*~"
 
-# add my local bin to the PATH
+# Add my local bin to the PATH
 if [ -d ~/bin ]; then
     PATH=$PATH:~/bin
     export PATH
 fi
 
-
+# Setup environment for FreeSurfer
+if [ -d /usr/local/freesurfer ]; then
+    export FREESURFER_HOME=/usr/local/freesurfer
+    . $FREESURFER_HOME/SetUpFreeSurfer.sh
+fi
 
