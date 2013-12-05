@@ -11,4 +11,10 @@ git config --global core.editor gedit
 git config --global merge.tool meld
 git config --list
 
+if [ -f ~/.gitignore ]; then
+    echo "WARNING: Original ~/.gitignore file will be moved to ~/.gitignore.orig and replaced"
+    mv ~/.gitignore ~/.gitignore.orig
+fi
+cp template.gitignore ~/.gitignore
+
 
