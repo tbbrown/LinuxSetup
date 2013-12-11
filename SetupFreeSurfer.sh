@@ -24,5 +24,13 @@ fi
 cd /usr/local
 sudo tar xvf ~/Downloads/$FreeSurferTarBall
 
+# Setup library links
+cd /usr/lib/x86_64-linux-gnu
+sudo ln -s libjpeg.so.8 libjpeg.so.62
+sudo ln -s libtiff.so.5 libtiff.so.3
+
 # Return to the directory we were in when this started
 cd $StartingDirectory
+
+# Copy license file
+sudo cp template.freesurfer.license /usr/local/freesurfer

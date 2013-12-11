@@ -14,3 +14,9 @@ if [ -d /usr/local/freesurfer ]; then
     . $FREESURFER_HOME/SetUpFreeSurfer.sh
 fi
 
+# Setup environment for Connectome Workbench
+if [ -d ~/workbench ]; then
+    PATH=$PATH:~/workbench/bin_linux64
+    export PATH
+fi
+
