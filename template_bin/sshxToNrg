@@ -8,8 +8,10 @@
 # Author: Timothy B. Brown
 
 # establish defaults
-#defaultNrgSystem=hcpx-dev-cuda00
-defaultNrgSystem=hcpx-dev-tim1
+defaultNrgSystemPrefix=hcpx-dev
+
+#defaultNrgSystemName=cuda00
+defaultNrgSystemName=tim1
 
 # use the following default for general use
 # defaultLoginId=`whoami`
@@ -19,14 +21,24 @@ defaultNrgSystem=hcpx-dev-tim1
 # NRG user id.
 defaultLoginId=tbrown01
 
-# get name of NRG system to which to connect
-echo -ne "Enter name of NRG system to which to connect: ["$defaultNrgSystem"]: "
+# get system name prefix for NRG system to which to connect
+echo -ne "Enter NRG system name prefix: ["$defaultNrgSystemPrefix"]: "
+read ans
+if [ -n "$ans" ]
+then 
+  prefix=$ans
+else
+  prefix=$defaultNrgSystemPrefix
+fi
+
+# get system name for NRG system to which to connect
+echo -ne "Enter NRG system name: ["$defaultNrgSystemName"]: "
 read ans
 if [ -n "$ans" ]
 then
-  host=$ans
+  host=$prefix-$ans
 else
-  host=$defaultNrgSystem
+  host=$prefix-$defaultNrgSystemName
 fi
 
 # get username for system to which to connect

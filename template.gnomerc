@@ -1,6 +1,7 @@
 # export environment variables
 
 export JAVA_HOME=/usr/lib/jvm/default-java
+export TOMCAT_HOME=/home/tbb/apache-tomcat-6.0.37
 export EDITOR=gedit
 
 #export BBAS_PROJECTS=/home/tbb/projects/bbassoftware

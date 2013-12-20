@@ -1,6 +1,7 @@
 # command aliases
 alias ls="ls -F"
 alias purge="rm -i *~ .*~"
+alias rm="rm -i"
 
 # Add my local bin to the PATH
 if [ -d ~/bin ]; then
@@ -20,3 +21,8 @@ if [ -d ~/workbench ]; then
     export PATH
 fi
 
+# Setup environment for XNAT
+if [ -d ~/xnat ]; then
+    PATH=$PATH:~/xnat/bin
+    export PATH
+fi

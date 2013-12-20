@@ -17,6 +17,6 @@ if [ -f ~/ExampleUnixCommands.txt ]; then
     mv ~/ExampleUnixCommands.txt ~/ExampleUnixCommands.txt.orig
 fi
 
-cp ExampleUnixCommands.txt ~
+cp template.ExampleUnixCommands.txt ~/ExampleUnixCommands.txt
 
 
